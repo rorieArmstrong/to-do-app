@@ -14,7 +14,7 @@ function HomePage() {
         return next;
     }
 
-    const [combination, setCombination] = useState({ configuration: 0, roundness: 0 })
+    const [combination, setCombination] = useState({ configuration: 1, roundness: 1 })
     const [prev, setPrev] = useState(0)
     const [transition, setTransition] = useState(true)
     const [navigating, setNavigating] = useState(false)
