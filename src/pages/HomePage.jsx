@@ -14,7 +14,7 @@ function HomePage() {
         return next;
     }
 
-    const [combination, setCombination] = useState({ configuration: 1, roundness: 1 })
+    const [combination, setCombination] = useState({ configuration: 0, roundness: 0 })
     const [prev, setPrev] = useState(0)
     const [transition, setTransition] = useState(true)
     const [navigating, setNavigating] = useState(false)
@@ -25,6 +25,8 @@ function HomePage() {
         { configuration: 1, roundness: 4 },
         { configuration: 2, roundness: 2 },
         { configuration: 2, roundness: 1 },
+        { configuration: 3, roundness: 1 },
+        { configuration: 3, roundness: 2 },
         { configuration: 3, roundness: 3 }
     ];
 
@@ -36,7 +38,7 @@ function HomePage() {
                     setCombination(combinations[index]);
                     setPrev(index);
                 }
-            }, 3000);
+            }, 2250);
         return () => {
             clearInterval(updateConfiguration)
         }
@@ -48,7 +50,7 @@ function HomePage() {
     const navigateTo = (to, config) => {
         setNavigating(true)
         setCombination({ configuration: config, roundness: 1 })
-        setTimeout(() => {navigate(to)},1500)
+        setTimeout(() => {navigate(to)},750)
         
     }
 
