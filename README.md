@@ -4,8 +4,7 @@ MVP
 	-   To do app that tracks long term goals and daily habbits
 
 Auth
-    -   Google auth/Oauth
-
+    -   SOLID auth + DB
 Tracks:
 	-	Long term goals
 	-	Short term goals
