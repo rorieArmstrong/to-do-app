@@ -21,7 +21,6 @@
 
 #wrapper > .shape > h2 {
   text-transform: uppercase;
-  visibility: hidden;
   left: 0;
   top: 0;
   text-align: left;
@@ -37,7 +36,11 @@
   z-index: 5;
 }
 
-#wrapper > .shape:hover > h2 {
+#wrapper > .shape > .h2Hover {
+  visibility: hidden;
+}
+
+#wrapper > .shape:hover > .h2Hover {
   visibility: visible;
 }
 

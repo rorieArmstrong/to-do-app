@@ -56,25 +56,25 @@ function HomePage() {
 
     return ( <div id='wrapper' data-configuration={combination.configuration} data-roundness={combination.roundness} >
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("LongTermGoals", 4)} className='shape'>
-            <h2>Long term goals</h2>
+            <h2 className='h2Hover'>Long term goals</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("ShortTermGoals", 5)} className='shape'>
-            <h2>Short term goals</h2>
+            <h2 className='h2Hover'>Short term goals</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("CoreBeliefs", 6)} className='shape'>
-            <h2>Core beliefs</h2>
+            <h2 className='h2Hover'>Core beliefs</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("DailyHabits", 7)} className='shape'>
-            <h2>Daily Habits</h2>
+            <h2 className='h2Hover'>Daily Habits</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("Visualisations", 8)} className='shape'>
-            <h2>Visualisation</h2>
+            <h2 className='h2Hover'>Visualisation</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("Gratitudes", 9)} className='shape'>
-            <h2>Gratitudes</h2>
+            <h2 className='h2Hover'>Gratitudes</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("Journal", 10)} className='shape'>
-            <h2>Journal</h2>
+            <h2 className='h2Hover'>Journal</h2>
         </div>
     </div> );
 }
