@@ -6,16 +6,26 @@
 }
 
 #wrapper > .shape{
-    height: 30%;
-    width: 30%;
+    height: 0%;
+    width: 0%;
+    top: 100%;
+    left: 100%;
     position: absolute;
     transition: left, top, height, width, border-radius;
     transition-duration: 750ms;
     transition-timing-function: ease-in-out;
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    cursor: pointer;
 }
 
 #wrapper > .shape > h2 {
+  text-transform: uppercase;
   visibility: hidden;
+  left: 0;
+  top: 0;
+  text-align: left;
+  float: left;
   margin: 0px !important;
   height: 100%;
   width: 100%;
@@ -23,6 +33,7 @@
   font-size: 80vh;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 6em;
   z-index: 5;
 }
 
@@ -246,4 +257,53 @@
   
   #wrapper[data-roundness="4"] > .shape:nth-child(7) {  
     border-top-left-radius: 10rem;
+  }
+
+  #wrapper[data-configuration="4"] > .shape:nth-child(1) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="5"] > .shape:nth-child(2) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="6"] > .shape:nth-child(3) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="7"] > .shape:nth-child(4) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="8"] > .shape:nth-child(5) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="9"] > .shape:nth-child(6) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  #wrapper[data-configuration="10"] > .shape:nth-child(7) {  
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
   }
