@@ -13,3 +13,7 @@ Tracks:
 	-	Visualisation
 	-	Gratitiude
 	-	Review of the day
+
+To Do's:
+	-	Connect to DB
+	-	Set up tables
