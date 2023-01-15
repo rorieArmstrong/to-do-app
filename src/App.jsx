@@ -1,5 +1,8 @@
-import { useState, Fragment } from 'react'
+import { useEffect, useState, Fragment } from 'react'
 import './App.css';
+import { auth } from './firebase';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 import { BrowserRouter as Router, Routes, Route, useLocation   } from 'react-router-dom';
 
@@ -14,10 +17,26 @@ import Visualisations from './pages/Visualisations'
 import SignIn from './pages/SignIn';
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    const auth = getAuth();
+    const user = auth.currentUser;
+    
+    if (!user) {
+      navigate('/SignIn')
+    }
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+        } else {
+          navigate('/SignIn')
+        }
+      });
+     
+  }, [])
 
   return (
     <div className="App">
-      <Router>
 
       <Fragment>
         <Routes >
@@ -33,7 +52,6 @@ function App() {
 
         </Routes>
       </Fragment>
-      </Router>
     </div>
   )
 }
