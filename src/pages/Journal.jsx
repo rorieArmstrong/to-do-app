@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Journal.css'
 import { useNavigate } from "react-router-dom";
-import { collection, query, onSnapshot, doc, addDoc,} from "firebase/firestore";
+import { collection, query, onSnapshot, doc, addDoc, orderBy,} from "firebase/firestore";
 import { db } from "../firebase";
 import JournalEntry from '../components/JournalEntry';
 
@@ -26,7 +26,7 @@ function Journal() {
         bottom: 0
     })
     useEffect(() => {
-        const q = query(collection(db, "journal"));
+        const q = query(collection(db, "journal"), orderBy("created", "desc"));
         const unsub = onSnapshot(q, (querySnapshot) => {
         let JournalDB = [];
         querySnapshot.forEach((doc) => {
@@ -45,6 +45,7 @@ function Journal() {
         await addDoc(collection(db, "journal"), {
             title: new Date().toLocaleDateString(),
             body: body,
+            created: Date.now()
         });
             setBody("");
         }
@@ -67,17 +68,18 @@ function Journal() {
             <div>
                 <h2 onClick={() => navigateTo()}>Journal</h2>
             </div>
-            <div className='content' >
+            <div className='content' id='Journal-Content'>
                 <form onSubmit={handleSubmit}>
                     <div className="input_container">
                         <textarea
                             placeholder="My thoughts on today..."
                             value={body}
                             onChange={(e) => setBody(e.target.value)}
+                            id='Journal'
                         />
                     </div>
                     <div className="btn_container">
-                        <button className='JournalButton'>Add</button>
+                        <button id='Journal'>Add</button>
                     </div>
                 </form>
                 {JournalArray.map(({id, title , body}) => {
