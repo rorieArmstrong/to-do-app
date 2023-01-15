@@ -5,14 +5,12 @@ import { collection, query, onSnapshot, doc, addDoc, orderBy, where,} from "fire
 import { db } from "../firebase";
 import JournalEntry from '../components/JournalEntry';
 
-
-function Journal() {
+function Journal({user} = {user:{uid:''}}) {
     const [combination, setCombination] = useState({ configuration: 10, roundness: 1 })
-
     const navigate = useNavigate();
 
     const navigateTo = () => {
-        setCombination({ configuration: 1, roundness: 1 })
+        setCombination({ configuration: 1, roundness: 4 })
         setTimeout(() => {navigate('/')},750)
         
     }
@@ -26,7 +24,7 @@ function Journal() {
         bottom: 0
     })
     useEffect(() => {
-        const q = query(collection(db, "journal"), orderBy("created", "desc"));
+        const q = query(collection(db, "journal"), orderBy("created", "desc"), where("uid", "==", user.uid));
         const unsub = onSnapshot(q, (querySnapshot) => {
         let JournalDB = [];
         querySnapshot.forEach((doc) => {
@@ -45,7 +43,8 @@ function Journal() {
         await addDoc(collection(db, "journal"), {
             title: new Date().toLocaleDateString(),
             body: body,
-            created: Date.now()
+            created: Date.now(),
+            uid: user.uid,
         });
             setBody("");
         }

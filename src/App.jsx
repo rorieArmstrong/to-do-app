@@ -18,16 +18,18 @@ import SignIn from './pages/SignIn';
 
 function App() {
   const navigate = useNavigate();
-
-  useEffect(()=>{
+  const [ user, setUser ] = useState({uid:''})
+  console.log(user)
+  useEffect(()=>  {
     const auth = getAuth();
-    const user = auth.currentUser;
+    setUser(auth.currentUser);
     
-    if (!user) {
+    if (!user.uid) {
       navigate('/SignIn')
     }
     onAuthStateChanged(auth, (user) => {
         if (user) {
+          setUser(auth.currentUser)
         } else {
           navigate('/SignIn')
         }
@@ -40,15 +42,15 @@ function App() {
 
       <Fragment>
         <Routes >
-          <Route exact path="/DailyHabits" element={<DailyHabits />} />
-          <Route exact path="/CoreBeliefs" element={<CoreBeliefs/>}/>
-          <Route exact path="/Gratitudes" element={<Gratitudes/>}/>
-          <Route exact path="/Journal" element={<Journal/>}/>
-          <Route exact path="/LongTermGoals" element={<LongTermGoals/>}/>
-          <Route exact path="/ShortTermGoals" element={<ShortTermGoals/>}/>
-          <Route exact path="/Visualisations" element={<Visualisations/>}/>
+          <Route exact path="/DailyHabits" element={<DailyHabits  user={user} />} />
+          <Route exact path="/CoreBeliefs" element={<CoreBeliefs user={user} />}/>
+          <Route exact path="/Gratitudes" element={<Gratitudes user={user} />}/>
+          <Route exact path="/Journal" element={<Journal user={user} />}/>
+          <Route exact path="/LongTermGoals" element={<LongTermGoals user={user} />}/>
+          <Route exact path="/ShortTermGoals" element={<ShortTermGoals user={user} />}/>
+          <Route exact path="/Visualisations" element={<Visualisations user={user} />}/>
           <Route exact path='/SignIn' element={<SignIn/>} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage  user={user} />} />
 
         </Routes>
       </Fragment>

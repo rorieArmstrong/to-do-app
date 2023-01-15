@@ -376,3 +376,68 @@ button {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.LoginSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #ccc;
+  align-self: center;
+}
+
+.Title {
+  font-size: 6rem;
+}
+
+.Title > span:nth-child(1){
+  color: rgba(255, 173, 173, 0.75);
+}
+
+.Title > span:nth-child(2){
+  color: rgba(255, 214, 165, 0.75);
+}
+
+.Title > span:nth-child(3){
+  color: rgba(253, 255, 182, 0.75);
+}
+
+.Title > span:nth-child(4){
+  color: rgba(202, 255, 191, 0.75);
+}
+
+.Title > span:nth-child(5){
+  color: rgba(155, 246, 255, 0.75);
+}
+
+.Title > span:nth-child(6){
+  color: rgba(160, 196, 255, 0.75);
+}
+
+.Title > span:nth-child(7){
+  color: rgba(189, 178, 255, 0.75);
+}
+
+.Title > span:nth-child(8){
+  color: rgba(255, 173, 173, 0.75);;
+}
+
+.user-form > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.user-form {
+  width: 100%;
+}
+
+.user-form-section {
+  width: 70%;
+}
+
+.button-div {
+  justify-content: flex-end !important;
+  display: flex;
+}
