@@ -20,6 +20,12 @@ function Journal() {
     const [JournalArray, setJournalArray] = useState([]);
 
     useEffect(() => {
+        
+    })
+    window.scrollTo({
+        bottom: 0
+    })
+    useEffect(() => {
         const q = query(collection(db, "journal"));
         const unsub = onSnapshot(q, (querySnapshot) => {
         let JournalDB = [];
@@ -61,15 +67,7 @@ function Journal() {
             <div>
                 <h2 onClick={() => navigateTo()}>Journal</h2>
             </div>
-            <div className='content'>
-                {JournalArray.map(({id, title , body}) => {
-                    return(
-                    <JournalEntry 
-                        key={id}
-                        title={title}
-                        body={body}
-                    />)
-                }) }
+            <div className='content' >
                 <form onSubmit={handleSubmit}>
                     <div className="input_container">
                         <textarea
@@ -79,9 +77,17 @@ function Journal() {
                         />
                     </div>
                     <div className="btn_container">
-                        <button>Add</button>
+                        <button className='JournalButton'>Add</button>
                     </div>
                 </form>
+                {JournalArray.map(({id, title , body}) => {
+                    return(
+                    <JournalEntry 
+                        key={id}
+                        title={title}
+                        body={body}
+                    />)
+                }) }
             </div>
         </div>
     </div> );
