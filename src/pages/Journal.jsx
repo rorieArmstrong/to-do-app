@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Journal.css'
 import { useNavigate } from "react-router-dom";
-import { collection, query, onSnapshot, doc, addDoc, orderBy,} from "firebase/firestore";
+import { collection, query, onSnapshot, doc, addDoc, orderBy, where,} from "firebase/firestore";
 import { db } from "../firebase";
 import JournalEntry from '../components/JournalEntry';
 

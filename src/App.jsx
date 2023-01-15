@@ -11,6 +11,7 @@ import Journal from './pages/Journal';
 import LongTermGoals from './pages/LongTermGoals';
 import ShortTermGoals from './pages/ShortTermGoals';
 import Visualisations from './pages/Visualisations'
+import SignIn from './pages/SignIn';
 
 function App() {
 
@@ -27,7 +28,9 @@ function App() {
           <Route exact path="/LongTermGoals" element={<LongTermGoals/>}/>
           <Route exact path="/ShortTermGoals" element={<ShortTermGoals/>}/>
           <Route exact path="/Visualisations" element={<Visualisations/>}/>
+          <Route exact path='/SignIn' element={<SignIn/>} />
           <Route path="/" element={<HomePage />} />
+
         </Routes>
       </Fragment>
       </Router>
