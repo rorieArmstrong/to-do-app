@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Journal.css'
 import { useNavigate } from "react-router-dom";
+import { collection, query, onSnapshot, doc, addDoc,} from "firebase/firestore";
+import { db } from "../firebase";
+import JournalEntry from '../components/JournalEntry';
 
 
 function Journal() {
-    const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-    
-    const uniqueRand = (min, max, prev) => {
-        let next = prev;
-        
-        while(prev === next) next = rand(min, max);
-        
-        return next;
-    }
-
     const [combination, setCombination] = useState({ configuration: 10, roundness: 1 })
 
     const navigate = useNavigate();
@@ -24,21 +17,72 @@ function Journal() {
         
     }
 
+    const [JournalArray, setJournalArray] = useState([]);
+
+    useEffect(() => {
+        const q = query(collection(db, "journal"));
+        const unsub = onSnapshot(q, (querySnapshot) => {
+        let JournalDB = [];
+        querySnapshot.forEach((doc) => {
+            JournalDB.push({ ...doc.data(), id: doc.id });
+        });
+        setJournalArray(JournalDB);
+        });
+        return () => unsub();
+    }, []);
+
+    const [body, setBody] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (body !== "") {
+        await addDoc(collection(db, "journal"), {
+            title: new Date().toLocaleDateString(),
+            body: body,
+        });
+            setBody("");
+        }
+    };
+
     return ( <div id='wrapper' data-configuration={combination.configuration} data-roundness={combination.roundness} >
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
+        <div   className='shape'>
         </div>
-        <div  onClick={() => navigateTo()} className='shape'>
-            <h2>Journal</h2>
+        <div   className='shape'>
+            <div>
+                <h2 onClick={() => navigateTo()}>Journal</h2>
+            </div>
+            <div className='content'>
+                {JournalArray.map(({id, title , body}) => {
+                    return(
+                    <JournalEntry 
+                        key={id}
+                        title={title}
+                        body={body}
+                    />)
+                }) }
+                <form onSubmit={handleSubmit}>
+                    <div className="input_container">
+                        <textarea
+                            placeholder="My thoughts on today..."
+                            value={body}
+                            onChange={(e) => setBody(e.target.value)}
+                        />
+                    </div>
+                    <div className="btn_container">
+                        <button>Add</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div> );
 }

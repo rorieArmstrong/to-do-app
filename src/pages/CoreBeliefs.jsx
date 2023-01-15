@@ -18,25 +18,22 @@ function CoreBeliefs() {
         
     }
 
-    const [todos, setTodos] = React.useState([]);
+    const [coreBeliefs, setCoreBeliefs] = useState([]);
 
-    React.useEffect(() => {
-        const q = query(collection(db, "todos"));
+    useEffect(() => {
+        const q = query(collection(db, "core_beliefs"));
         const unsub = onSnapshot(q, (querySnapshot) => {
-        let todosArray = [];
+        let coreBeliefsArray = [];
         querySnapshot.forEach((doc) => {
-            todosArray.push({ ...doc.data(), id: doc.id });
+            coreBeliefsArray.push({ ...doc.data(), id: doc.id });
         });
-        setTodos(todosArray);
+        setCoreBeliefs(coreBeliefsArray);
         });
         return () => unsub();
     }, []);
 
-    const handleEdit = async (todo, title) => {
-        await updateDoc(doc(db, "todos", todo.id), { title: title });
-    };
-    const toggleComplete = async (todo) => {
-        await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
+    const handleEdit = async (coreBeliefs, title) => {
+        await updateDoc(doc(db, "todos", coreBeliefs.id), { title: title });
     };
     const handleDelete = async (id) => {
         await deleteDoc(doc(db, "todos", id));

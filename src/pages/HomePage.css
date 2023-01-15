@@ -27,12 +27,13 @@
   float: left;
   margin: 0px !important;
   width: 100%;
+  height: 8em;
   text-overflow: clip;
   font-size: 80vh;
   white-space: nowrap;
   overflow: hidden;
   font-size: 6em;
-  z-index: 5;
+  cursor: pointer;
 }
 
 #wrapper > .shape > .h2Hover {
@@ -306,6 +307,19 @@
   #wrapper[data-configuration="10"] > .shape:nth-child(7) {  
     left: 0%;
     top: 0%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content {
+    height: 100%;
+    width: 100%;
+    top: 8em;
+    cursor: auto;
+    margin: 1em;
+  }
+
+  form  {
     height: 100%;
     width: 100%;
   }
