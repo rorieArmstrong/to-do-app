@@ -68,7 +68,7 @@ function HomePage() {
             <h2 className='h2Hover'>Daily Habits</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("Visualisations", 8)} className='shape'>
-            <h2 className='h2Hover'>Visualisation</h2>
+            <h2 className='h2Hover'>Visualisations</h2>
         </div>
         <div onMouseEnter={() => setTransition(false)} onMouseLeave={() => setTransition(true)} onClick={() => navigateTo("Gratitudes", 9)} className='shape'>
             <h2 className='h2Hover'>Gratitudes</h2>
