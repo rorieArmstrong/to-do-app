@@ -1,0 +1,14 @@
+#Visualisations-Content::-webkit-scrollbar-thumb {
+    background: rgba(155, 246, 255, 0.5); 
+    
+  }
+  
+  #Visualisations-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(155, 246, 255, 0.9); 
+  }
+  
+  #Visualisations {
+    background-color: rgba(155, 246, 255, 1);
+  }
+
+  

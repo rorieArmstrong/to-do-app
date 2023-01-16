@@ -1,0 +1,14 @@
+  #Journal-Content::-webkit-scrollbar-thumb {
+    background: rgba(189, 178, 255, 0.5); 
+    
+  }
+  
+  #Journal-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(189, 178, 255, 0.9); 
+  }
+  
+  #Journal {
+    background-color: rgba(189, 178, 255, 1);
+  }
+
+  
