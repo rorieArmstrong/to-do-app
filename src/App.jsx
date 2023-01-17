@@ -19,7 +19,6 @@ import SignIn from './pages/SignIn';
 function App() {
   const navigate = useNavigate();
   const [ user, setUser ] = useState({uid:''})
-  console.log(user)
   useEffect(()=>  {
     const auth = getAuth();
     setUser(auth.currentUser);
