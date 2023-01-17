@@ -1,0 +1,14 @@
+#Gratitudes-Content::-webkit-scrollbar-thumb {
+    background: rgba(160, 196, 255, 0.5); 
+    
+  }
+  
+  #Gratitudes-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(160, 196, 255, 0.9); 
+  }
+  
+  #Gratitudes {
+    background-color: rgba(160, 196, 255, 1);
+  }
+
+  
