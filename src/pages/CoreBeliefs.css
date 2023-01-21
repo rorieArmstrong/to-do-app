@@ -1,0 +1,14 @@
+#CoreBeliefs-Content::-webkit-scrollbar-thumb {
+    background: rgba(253, 255, 182, 0.5); 
+    
+  }
+  
+  #CoreBeliefs-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 255, 182, 0.9); 
+  }
+  
+  #CoreBeliefs {
+    background-color: rgba(253, 255, 182, 1);
+  }
+
+  

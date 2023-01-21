@@ -1,0 +1,14 @@
+#LongTermGoals-Content::-webkit-scrollbar-thumb {
+    background: rgba(255, 173, 173, 0.5); 
+    
+  }
+  
+  #LongTermGoals-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 173, 173, 0.9); 
+  }
+  
+  #LongTermGoals {
+    background-color: rgba(255, 173, 173, 1);
+  }
+
+  

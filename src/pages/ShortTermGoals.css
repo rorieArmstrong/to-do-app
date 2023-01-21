@@ -1,0 +1,14 @@
+#shortTermGoals-Content::-webkit-scrollbar-thumb {
+    background: rgba(255, 214, 165, 0.5); 
+    
+  }
+  
+  #shortTermGoals-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 214, 165, 0.9); 
+  }
+  
+  #shortTermGoals {
+    background-color: rgba(255, 214, 165, 1);
+  }
+
+  
