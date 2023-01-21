@@ -111,11 +111,15 @@ function LongTermGoals({user = {uid:''}}) {
                         <div className='Content' id='LongTermGoals' key={id}>
                             <div className='tile-with-buttons'>
                                 <h4>{title + " " + (completed? "- completed: " + completedDate :"")}</h4>
-                                {!completed?<div className='array-buttons-div'>
+                                {!completed?
+                                <div className='array-buttons-div'>
                                     <img src={edit} alt='edit' className='button-img' onClick={() => {setEditMode(true);setBody(body);setID(id);setTitle(title)}}/>
                                     <img src={tick} alt='complete' className='button-img' onClick={() => {handleComplete(id)}}/>
                                     <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
-                                </div>:''}
+                                </div>:
+                                <div className='array-buttons-div-complete'>
+                                    <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
+                                </div>}
                             </div>
                             
                             <p>{body}</p>

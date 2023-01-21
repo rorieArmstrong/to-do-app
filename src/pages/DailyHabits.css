@@ -1,29 +1,13 @@
-.main {  
-    aspect-ratio: 1.618;
-    width: 90vw;
-    height: 90vh;
-    border-bottom-left-radius: 6rem;
-    border-top-right-radius: 6rem;
-    position: relative;
-  }
-
-#DailyHabits {
-    background-color: rgba(202, 255, 191, 0.75)
+#dailyHabits-Content::-webkit-scrollbar-thumb {
+  background: rgba(202, 255, 191, 0.5); 
+  
 }
 
-h2 {
-    text-transform: uppercase;
-  left: 0;
-  top: 0;
-  text-align: left;
-  float: left;
-  margin: 0px !important;
-  height: 100%;
-  width: 100%;
-  text-overflow: clip;
-  font-size: 80vh;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 6em;
-  z-index: 5;
+#dailyHabits-Content::-webkit-scrollbar-thumb:hover {
+  background: rgba(202, 255, 191, 0.9); 
 }
+
+#dailyHabits {
+  background-color: rgba(202, 255, 191, 1);
+}
+
