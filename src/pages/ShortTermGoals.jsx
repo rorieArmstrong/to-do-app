@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './shortTermGoals.css'
+import './ShortTermGoals.css'
 import { useNavigate } from "react-router-dom";
 import { collection, query, onSnapshot, doc, addDoc, orderBy, where, deleteDoc, updateDoc,} from "firebase/firestore";
 import { db } from "../firebase";
