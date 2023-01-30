@@ -85,7 +85,7 @@ function dailyHabits({user = {uid:''}}) {
                         />
                     </div>
                     <div className="btn_container">
-                        <button id='dailyHabits'>Add</button> :
+                        <button id='dailyHabits'>Add</button>
                     </div>
                 </form>
                 {dailyHabitsArray.map(({id, title , streak, completedDate}) => {

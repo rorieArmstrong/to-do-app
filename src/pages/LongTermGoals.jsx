@@ -91,7 +91,7 @@ function LongTermGoals({user = {uid:''}}) {
                             id='LongTermGoals'
                         />
                         <textarea
-                            placeholder="Write down the details of a goal that yo want to achieve in 5 years..."
+                            placeholder="Write down the details of a goal that you want to achieve in 5 years..."
                             value={body}
                             onChange={(e) => setBody(e.target.value)}
                             id='LongTermGoals'
