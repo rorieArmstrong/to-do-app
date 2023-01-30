@@ -493,19 +493,19 @@ button {
   width: 150px;
   margin-block-start: 0.66em;
   margin-block-end: 0.66em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-start: 0.66em;
+  margin-inline-end: 0.66em;
 }
 
 .array-buttons-div{
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
   max-width: 50%;
   width: 150px;
   margin-block-start: 0.66em;
   margin-block-end: 0.66em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-start: 0.66em;
+  margin-inline-end: 0.66em;
 }
 
 .tile-with-buttons{
@@ -522,4 +522,11 @@ button {
 .habit-title{
   justify-content: start;
   display: flex;
+}
+
+.streak-buttons{
+  justify-content: space-between;
+  display: flex;
+  max-width: 50%;
+  width: 300px;
 }
