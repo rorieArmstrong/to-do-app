@@ -92,24 +92,26 @@ function dailyHabits({user = {uid:''}}) {
                     return(
                         <div className='Content' id='dailyHabits' key={id}>
                             <div className='tile-with-buttons'>
-                                {streak > 0? 
-                                    <div className='habit-title'>
-                                        <h4>{title}</h4>
-                                        <div className='streak-container'>
-                                            <img src={streakImg} alt='streak' className='button-img'/> 
-                                            <h4>{' x' + streak} </h4>
-                                        </div>
+                                <div className='habit-title'>
+                                    <h4>{title}</h4>
+                                </div>
+                                <div className='streak-buttons'>
+                                    {streak? 
+                                    <div className='streak-container'>
+                                        <img src={streakImg} alt='streak' className='button-img'/> 
+                                        <h4>{' x' + streak} </h4>
                                     </div>:
-                                    <h4>{title}</h4>}
-                                {! (0 == (Math.floor(Date.now()/(1000 * 3600 * 24))-Math.floor(completedDate/(1000 * 3600 * 24))))?
-                                <div className='array-buttons-div'>
-                                    <img src={tick} alt='complete' className='button-img' onClick={() => {handleComplete(id)}}/>
-                                    <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
-                                </div>:
-                                <div className='array-buttons-div'>
-                                    <img style={{"visibility": "hidden"}} src={tick} alt='complete' className='button-img' onClick={() => {handleComplete(id)}}/>
-                                    <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
-                                </div>}
+                                     <div className='streak-container'></div>}
+                                    {! (0 == (Math.floor(Date.now()/(1000 * 3600 * 24))-Math.floor(completedDate/(1000 * 3600 * 24))))?
+                                    <div className='array-buttons-div'>
+                                        <img src={tick} alt='complete' className='button-img' onClick={() => {handleComplete(id)}}/>
+                                        <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
+                                    </div>:
+                                    <div className='array-buttons-div'>
+                                        <img style={{"visibility": "hidden"}} src={tick} alt='complete' className='button-img' onClick={() => {handleComplete(id)}}/>
+                                        <img src={cross} alt='delete' className='button-img' onClick={() => {handleDelete(id)}}/>
+                                    </div>}
+                                </div>
                             </div>
                         </div>)
                 }) }
